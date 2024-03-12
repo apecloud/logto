@@ -182,7 +182,7 @@ export const handleSamlAssertion = async (
   });
 
   // Used to check whether xml content is valid in format.
-  saml.setSchemaValidator(validator);
+  // saml.setSchemaValidator(validator);
 
   try {
     const assertionResult = await serviceProvider.parseLoginResponse(
