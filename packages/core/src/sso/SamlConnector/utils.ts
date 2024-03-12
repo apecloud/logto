@@ -37,7 +37,7 @@ export const parseXmlMetadata = (
   idP: saml.IdentityProviderInstance
 ): SamlIdentityProviderMetadata => {
   // Used to check whether xml content is valid in format.
-  saml.setSchemaValidator(validator);
+  // saml.setSchemaValidator(validator);
 
   const rawSingleSignOnService = idP.entityMeta.getSingleSignOnService(
     saml.Constants.namespace.binding.redirect
