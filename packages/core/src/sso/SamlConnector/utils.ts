@@ -37,7 +37,11 @@ export const parseXmlMetadata = (
   idP: saml.IdentityProviderInstance
 ): SamlIdentityProviderMetadata => {
   // Used to check whether xml content is valid in format.
-  // saml.setSchemaValidator(validator);
+  saml.setSchemaValidator({
+    validate: (response: string) => {
+      return Promise.resolve('skipped');
+    }
+  });
 
   const rawSingleSignOnService = idP.entityMeta.getSingleSignOnService(
     saml.Constants.namespace.binding.redirect
@@ -182,7 +186,11 @@ export const handleSamlAssertion = async (
   });
 
   // Used to check whether xml content is valid in format.
-  // saml.setSchemaValidator(validator);
+  saml.setSchemaValidator({
+    validate: (response: string) => {
+      return Promise.resolve('skipped');
+    }
+  });
 
   try {
     const assertionResult = await serviceProvider.parseLoginResponse(
