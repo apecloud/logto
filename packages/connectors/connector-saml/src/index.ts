@@ -15,7 +15,7 @@ import {
   validateConfig,
   ConnectorType,
 } from '@logto/connector-kit';
-import * as saml from 'samlify';
+import * as saml from 'apelcoud-samlify';
 
 import { defaultMetadata } from './constant.js';
 import { samlConfigGuard } from './types.js';

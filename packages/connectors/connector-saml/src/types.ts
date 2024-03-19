@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import type * as saml from 'samlify';
+import type * as saml from 'apelcoud-samlify';
 
 import {
   assertionBinding,

@@ -1,6 +1,6 @@
 import { type Optional } from '@silverhand/essentials';
+import * as saml from 'apelcoud-samlify';
 import { XMLValidator } from 'fast-xml-parser';
-import * as saml from 'samlify';
 import { z } from 'zod';
 
 import { EnvSet, getTenantEndpoint } from '#src/env-set/index.js';

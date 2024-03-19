@@ -1,7 +1,7 @@
 import type { SetSession } from '@logto/connector-kit';
 import { ConnectorError, ConnectorErrorCodes, socialUserInfoGuard } from '@logto/connector-kit';
+import * as saml from 'apelcoud-samlify';
 import { XMLValidator } from 'fast-xml-parser';
-import * as saml from 'samlify';
 
 import type { ESamlHttpRequest, ProfileMap, SamlConfig } from './types.js';
 

@@ -1,10 +1,9 @@
 import { X509Certificate } from 'node:crypto';
 
-import * as validator from '@authenio/samlify-node-xmllint';
 import { type Optional, appendPath, tryThat } from '@silverhand/essentials';
 import { conditional } from '@silverhand/essentials';
+import * as saml from 'apelcoud-samlify';
 import { HTTPError, got } from 'got';
-import * as saml from 'samlify';
 import { z } from 'zod';
 
 import { ssoPath } from '#src/routes/interaction/const.js';
@@ -38,9 +37,9 @@ export const parseXmlMetadata = (
 ): SamlIdentityProviderMetadata => {
   // Used to check whether xml content is valid in format.
   saml.setSchemaValidator({
-    validate: (response: string) => {
-      return Promise.resolve('skipped');
-    }
+    validate: async (response: string) => {
+      return 'skipped';
+    },
   });
 
   const rawSingleSignOnService = idP.entityMeta.getSingleSignOnService(
@@ -187,9 +186,9 @@ export const handleSamlAssertion = async (
 
   // Used to check whether xml content is valid in format.
   saml.setSchemaValidator({
-    validate: (response: string) => {
-      return Promise.resolve('skipped');
-    }
+    validate: async (response: string) => {
+      return 'skipped';
+    },
   });
 
   try {
